@@ -1,0 +1,22 @@
+@import "../variables.scss";
+
+.container {
+    padding: 96px 20px; /* Adjust the padding for larger screens */
+}
+
+@media screen and (min-width: 992px) {
+    .header {
+        position: sticky;
+        top: 96px; /* Adjust this value based on your design */
+        max-height: 600px;
+    }
+
+    .container {
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .container {
+        padding: 50px 20px; /* Adjust the padding for smaller screens */
+    }
+}
