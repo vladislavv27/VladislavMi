@@ -34,10 +34,11 @@
   text-decoration: none;
   font-size: 3.5rem;
 }
-.typing-text {
-  color: $gary-blue;
+.typing-text-block {
+  .typing-text {
+    color: $gary-blue;
+  }
 }
-
 @media screen and (max-width: 991px) {
   .links {
     padding-top: 20px;
@@ -45,5 +46,8 @@
   }
   .nav {
     display: none;
+  }
+  .typing-text-block {
+    height: 60px;
   }
 }
