@@ -25,3 +25,32 @@
     }
   }
 }
+.gradient-bar {
+  height: 10px;
+  border-radius: 10px;
+}
+.expir-educat-block {
+  padding: 10px;
+  &:hover {
+    background-color: rgba($gary-blue, 0.2);
+    border-radius: 20px;
+    transition: 1s;
+  }
+  .date-tab {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: $blue;
+    color: $white;
+    border-radius: 15px;
+    margin-bottom: 10px;
+  }
+  .expir-educat-info {
+    h4 {
+      color: $white;
+    }
+    a {
+      color: $gary-blue;
+      text-decoration: none;
+    }
+  }
+}

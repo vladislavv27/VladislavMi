@@ -11,20 +11,26 @@ export class MainComponent implements OnInit {
 
 
   ngOnInit() {
-AOS.init();
+    AOS.init();
     this.applyRandomGradientToText();
+
   }
 
   applyRandomGradientToText() {
-    const elements = document.querySelectorAll('.gradient-text');
-    elements.forEach(element => {
+    const textElements = document.querySelectorAll('.gradient-text');
+    textElements.forEach(element => {
       const htmlElement = element as HTMLElement;
       htmlElement.style.backgroundImage = this.gradient;
       htmlElement.style.backgroundClip = 'text';
       htmlElement.style.color = 'transparent';
       htmlElement.style.backgroundSize = '100% 100%';
-      htmlElement.style.animation = 'textAnimation 2s forwards';
     });
-
+    const gradientBar = document.querySelectorAll('.gradient-bar');
+    gradientBar.forEach(bar => {
+      const barElement = bar as HTMLElement;
+      barElement.style.background = this.gradient; 
+      barElement.style.color = 'transparent';
+      barElement.style.backgroundSize = '100% 100%';
+    });
   }
-}
+  }
