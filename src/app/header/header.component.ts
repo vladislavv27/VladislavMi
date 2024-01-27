@@ -1,51 +1,47 @@
-import { Component, OnInit } from '@angular/core';
-import { trigger, style, animate, transition, state } from '@angular/animations';
+import { Component, Input, OnInit } from '@angular/core';
+import Typewriter from 'typewriter-effect/dist/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-
 })
 export class HeaderComponent implements OnInit {
+  @Input() gradient = '';
+
 
   ngOnInit() {
     this.applyRandomGradientToText();
+    
   }
-
-
 
   applyRandomGradientToText() {
-    const randomColor1 = this.getRandomColor();
-    const randomColor2 = this.getRandomColor();
-  
-    const gradient = `linear-gradient(45deg, ${randomColor1}, ${randomColor2})`;
-  
-    const element = document.querySelector('.gradient-text') as HTMLElement;
-    if (element) {
-      element.style.backgroundImage = gradient;
-      element.style.webkitBackgroundClip = 'text';
-      element.style.backgroundClip = 'text';
-      element.style.color = 'transparent'; // Make the text transparent
-  
-      // Set a random gradient for the text color
-      element.style.backgroundSize = '100% 100%'; // Ensure the gradient covers the entire text
-      element.style.animation = 'textAnimation 2s forwards'; // Add animation for text reveal
+    const myName = document.querySelector('.gradient-text') as HTMLElement;
+    const typingText = document.querySelector('.typing-text') as HTMLElement;
+    if (myName) {
+      myName.style.backgroundImage = this.gradient;
+      myName.style.backgroundClip = 'text';
+      myName.style.color = 'transparent';
+      
+      myName.style.backgroundSize = '100% 100%';
+      myName.style.animation = 'textAnimation 2s forwards';
     }
-  }
-  
-  getRandomColor() {
-    let randomColor;
-    do {
-      randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
-    } while (this.isColorBlack(randomColor));
-    return randomColor;
-  }
-  
-  isColorBlack(color: string) {
-    return color.toLowerCase() === '#000000';
-  }
-  
-  
 
+    var typewriter = new Typewriter(typingText, {
+      loop: true,
+      delay: 75,
+    });
+    
+    typewriter
+      .typeString('Passionate learner, coding my way to mastery.')      
+      .pauseFor(2500)
+      .deleteChars(45)
+      .typeString('Thriving in teamwork, I cherish collaborative environments and always welcome new connections.')  
+      .pauseFor(2500)  
+      .deleteChars(94)
+      .typeString(' I relish the challenge of finding innovative solutions to complex issues.')
+      .pauseFor(2500)
+      .start();
+  }
+  
 }
