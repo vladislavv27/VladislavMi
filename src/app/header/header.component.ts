@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ViewportScroller } from '@angular/common';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Router  } from '@angular/router';
 import Typewriter from 'typewriter-effect/dist/core';
 
 @Component({
@@ -9,6 +11,7 @@ import Typewriter from 'typewriter-effect/dist/core';
 export class HeaderComponent implements OnInit {
   @Input() gradient = '';
 
+  constructor(private scroller: ViewportScroller, private router: Router) {}
 
   ngOnInit() {
     this.applyRandomGradientToText();
@@ -43,5 +46,4 @@ export class HeaderComponent implements OnInit {
       .pauseFor(2500)
       .start();
   }
-  
 }

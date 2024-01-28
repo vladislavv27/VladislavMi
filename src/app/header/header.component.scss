@@ -26,6 +26,9 @@
 .nav-link {
   color: $gary-blue;
   text-transform: uppercase;
+  &.active {
+    color: $blue;
+  }
 }
 .gradient-text {
   font-weight: bold;

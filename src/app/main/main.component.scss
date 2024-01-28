@@ -16,7 +16,6 @@
     height: 80px;
   }
 }
-
 @media screen and (max-width: 600px) {
   .tech-stack {
     img {
@@ -35,6 +34,12 @@
     background-color: rgba($gary-blue, 0.2);
     border-radius: 20px;
     transition: 1s;
+    .expir-educat-info {
+      h4 {
+        color: $blue;
+        transition: 1s;
+      }
+    }
   }
   .date-tab {
     display: inline-block;
