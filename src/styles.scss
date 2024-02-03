@@ -1,9 +1,14 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "./variables";
 @import "aos/dist/aos.css";
-body {
-  background-color: $black;
-}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  height: 100%;
+  background-color: $black;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+::selection {
+  color: $small-text;
+  background-color: $background-text;
+}

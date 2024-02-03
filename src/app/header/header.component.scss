@@ -26,6 +26,7 @@
 .nav-link {
   color: $gary-blue;
   text-transform: uppercase;
+  max-width: 140px;
   &.active {
     color: $title-text;
   }

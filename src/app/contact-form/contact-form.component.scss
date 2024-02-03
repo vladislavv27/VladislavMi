@@ -2,3 +2,18 @@
 label {
   color: $gary-blue;
 }
+.btna {
+  color: $small-text;
+  background-color: $background-text;
+  border: 0;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  &:hover {
+    transition: 0.5s;
+    box-shadow: 0 0 10px $title-text;
+  }
+  &:active {
+    transform: scale(0.9);
+  }
+}
