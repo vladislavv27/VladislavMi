@@ -4,6 +4,10 @@
 }
 .block-text {
   color: $gary-blue;
+  a {
+    text-decoration: none;
+    color: $white;
+  }
 }
 
 .tech-stack {
