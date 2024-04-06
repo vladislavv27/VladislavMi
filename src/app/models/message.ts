@@ -1,5 +1,5 @@
-export class messageVm{
-    name:string='';
-    email:string='';
-    message:string='';
+export interface messageVm{
+    name:string;
+    email:string;
+    message:string;
 }
