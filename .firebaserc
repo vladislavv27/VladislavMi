@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "vladislavmiportfolio"
-  }
+    "default": "vladislavmi-2999a",
+    "vladislavmi": "vladislavmi-2999a"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }
