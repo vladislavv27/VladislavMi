@@ -1,7 +1,8 @@
 {
   "projects": {
-    "default": "vladislavmi-2999a",
-    "vladislavmi": "vladislavmi-2999a"
+    "default": "vladislavsmi",
+    "vladislavmi": "vladislavmi-2999a",
+    "vladislavsmi": "vladislavsmi"
   },
   "targets": {},
   "etags": {},
