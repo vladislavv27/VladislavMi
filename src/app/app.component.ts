@@ -26,5 +26,5 @@ export class AppComponent implements OnInit {
 
   getRandomValue() {
     return Math.floor(Math.random() * (256 - 80) + 80);
-  }//
+  }
 }
