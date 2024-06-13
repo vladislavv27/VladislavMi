@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
 
     setInterval(() => {
       this.updateGradient();
-    }, 8000);
+    }, 10000);
   }
 
   updateGradient() {
