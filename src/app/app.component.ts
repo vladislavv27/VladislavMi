@@ -9,10 +9,6 @@ export class AppComponent implements OnInit {
   public gradient: string = '';
   ngOnInit() {
     this.updateGradient();
-
-    setInterval(() => {
-      this.updateGradient();
-    }, 10000);
   }
 
   updateGradient() {
