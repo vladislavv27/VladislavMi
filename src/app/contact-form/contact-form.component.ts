@@ -13,7 +13,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ContactFormComponent implements OnInit, OnDestroy {
   newMessageForm!: FormGroup;
   unsubus$: Subject<boolean> = new Subject();
-
+  messageSentSucces: boolean = false;
+  messageSentError: boolean = false;
   constructor(
     private formBuilder: FormBuilder,
     private service: FormService,
@@ -47,14 +48,22 @@ export class ContactFormComponent implements OnInit, OnDestroy {
         )
         .pipe(takeUntil(this.unsubus$))
         .subscribe(
-          (res) => {},
+          (res) => {
+            this.newMessageForm.reset();
+            this.messageSentSucces = true;
+          },
           (error) => {
-            console.error('Error:', error); // error handler
+            this.messageSentError = true;
+            console.error('Error:', error);
           },
           () => {
-            console.log('Request complete'); // complete handler
+            console.log('Request complete');
           }
         );
     }
+  }
+  closeMessage() {
+    this.messageSentSucces = false;
+    this.messageSentError = false;
   }
 }

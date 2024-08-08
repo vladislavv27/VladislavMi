@@ -1,3 +1,17 @@
+<div
+  *ngIf="messageSentSucces"
+  (click)="closeMessage()"
+  class="alert alert-success mt-3 text-center"
+>
+  Your message has been sent successfully!
+</div>
+<div
+  *ngIf="messageSentError"
+  (click)="closeMessage()"
+  class="alert alert-error mt-3 text-center"
+>
+  Your message has been sent successfully!
+</div>
 <form [formGroup]="newMessageForm" (ngSubmit)="onSubmit()" novalidate>
   <div class="form-group py-3">
     <label for="name">Name:</label>

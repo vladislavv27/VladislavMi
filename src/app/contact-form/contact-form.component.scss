@@ -14,3 +14,27 @@ label {
     box-shadow: 0 0 10px $title-text;
   }
 }
+.alert-success {
+  color: $title-text;
+  background-color: $background-text;
+  padding: 10px;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.alert-success {
+  color: $title-text;
+  background-color: $background-text;
+  padding: 10px;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.alert-error {
+  color: orange;
+  background-color: $background-text;
+  padding: 10px;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
