@@ -39,6 +39,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
+    this.newMessageForm.markAllAsTouched();
     if (this.newMessageForm.valid) {
       this.service
         .sendMessage(
