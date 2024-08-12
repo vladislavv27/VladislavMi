@@ -10,7 +10,7 @@
   (click)="closeMessage()"
   class="alert alert-error mt-3 text-center"
 >
-  Your message has been sent successfully!
+  {{ error ? error : "Something went wrong!" }}
 </div>
 <form [formGroup]="newMessageForm" (ngSubmit)="onSubmit()" novalidate>
   <div class="form-group py-3">

@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { FormService } from './form.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-contact-form',
@@ -15,11 +14,8 @@ export class ContactFormComponent implements OnInit, OnDestroy {
   unsubus$: Subject<boolean> = new Subject();
   messageSentSucces: boolean = false;
   messageSentError: boolean = false;
-  constructor(
-    private formBuilder: FormBuilder,
-    private service: FormService,
-    private snackBar: MatSnackBar
-  ) {}
+  error: string = '';
+  constructor(private formBuilder: FormBuilder, private service: FormService) {}
 
   ngOnDestroy(): void {
     this.unsubus$.next(true);
@@ -55,6 +51,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
           },
           (error) => {
             this.messageSentError = true;
+            this.error = error;
             console.error('Error:', error);
           },
           () => {
